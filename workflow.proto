@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package workFlowClient;
 
-service Price {
+service WorkFlow {
     rpc SaveUpdatePriceForApproval (PriceUpdateRequest) returns (PriceUpdateResponse) {
     }
 }
