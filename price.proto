@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package workFlowClient;
+
+service Price {
+    rpc SaveUpdatePriceForApproval (PriceUpdateRequest) returns (PriceUpdateResponse) {
+    }
+}
+
+message Product {
+    int32 product_id = 1;
+    string product_name = 2;
+    float cost = 3;
+    string status = 4;
+}
+
+message PriceUpdateRequest {
+    repeated Product products = 1;
+}
+
+message PriceUpdateResponse {
+    string message = 1;
+}
