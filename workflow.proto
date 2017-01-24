@@ -9,9 +9,7 @@ service WorkFlow {
 
 message Product {
     int32 product_id = 1;
-    string product_name = 2;
-    float cost = 3;
-    string status = 4;
+    string version = 2;
 }
 
 message PriceUpdateRequest {
