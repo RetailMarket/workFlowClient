@@ -3,7 +3,9 @@ syntax = "proto3";
 package workFlowClient;
 
 service WorkFlow {
-    rpc SaveUpdatePriceForApproval (PriceUpdateRequest) returns (PriceUpdateResponse) {
+    rpc SaveUpdatePriceForApproval (ProductsRequest) returns (ProductsResponse) {
+    }
+    rpc UpdateStatusToCompleted (ProductsRequest) returns (ProductsResponse) {
     }
 }
 
@@ -12,10 +14,10 @@ message Product {
     string version = 2;
 }
 
-message PriceUpdateRequest {
+message ProductsRequest {
     repeated Product products = 1;
 }
 
-message PriceUpdateResponse {
+message ProductsResponse {
     string message = 1;
 }
