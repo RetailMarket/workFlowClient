@@ -7,6 +7,8 @@ service WorkFlow {
     }
     rpc UpdateStatusToCompleted (ProductsRequest) returns (ProductsResponse) {
     }
+    rpc GetRecordsPendingForApproval (GetProductsRequest) returns (GetProductsResponse) {
+    }
 }
 
 message Product {
@@ -20,4 +22,11 @@ message ProductsRequest {
 
 message ProductsResponse {
     string message = 1;
+}
+
+message GetProductsRequest {
+}
+
+message GetProductsResponse {
+    repeated Product products = 1;
 }
