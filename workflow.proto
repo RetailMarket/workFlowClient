@@ -3,30 +3,26 @@ syntax = "proto3";
 package workFlowClient;
 
 service WorkFlow {
-    rpc SaveUpdatePriceForApproval (ProductsRequest) returns (ProductsResponse) {
+    rpc PendingRecords (Request) returns (Records) {
     }
-    rpc UpdateStatusToCompleted (ProductsRequest) returns (ProductsResponse) {
+    rpc NotifyRecordsPicked (Records) returns (Response) {
     }
-    rpc GetRecordsPendingForApproval (GetProductsRequest) returns (GetProductsResponse) {
+    rpc NotifyRecordsProcessed (Records) returns (Response) {
     }
 }
 
-message Product {
+message Entry {
     int32 product_id = 1;
     string version = 2;
 }
 
-message ProductsRequest {
-    repeated Product products = 1;
+message Records {
+    repeated Entry entries = 1;
 }
 
-message ProductsResponse {
+message Response {
     string message = 1;
 }
 
-message GetProductsRequest {
-}
-
-message GetProductsResponse {
-    repeated Product products = 1;
+message Request {
 }
